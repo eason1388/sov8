@@ -587,53 +587,6 @@
     .btn-oracle:hover{box-shadow:var(--glow-gold);transform:translateY(-2px)}
 
     /* ══════════════════════════════
-       BALANCE
-    ══════════════════════════════ */
-    #balance{background:var(--bg-deepest)}
-    .balance-grid{
-      display:grid;grid-template-columns:1fr 1fr;
-      gap:28px;margin-bottom:36px;
-    }
-    .balance-col{background:var(--bg-card);border-radius:10px;padding:30px}
-    .balance-col h4{
-      font-family:'Noto Serif TC',serif;
-      font-size:clamp(1.1rem,2.8vw,1.25rem);
-      margin-bottom:18px;letter-spacing:.1em;
-    }
-    .balance-col.yang h4{color:#e8a040}
-    .balance-col.yin h4{color:var(--teal)}
-    .check-item{
-      display:flex;align-items:flex-start;gap:12px;
-      padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);
-      cursor:pointer;
-    }
-    .check-box{
-      width:20px;height:20px;flex-shrink:0;
-      border:1px solid var(--white-faint);border-radius:3px;
-      display:flex;align-items:center;justify-content:center;
-      transition:all .2s;
-    }
-    .check-box.checked{background:var(--teal);border-color:var(--teal)}
-    .check-box.checked::after{content:'✓';font-size:.8rem;color:white}
-    .check-label{color:var(--white-dim);font-size:clamp(.95rem,2vw,1.02rem);line-height:1.7}
-    .balance-result{background:var(--bg-card2);border-radius:10px;padding:28px}
-    .balance-bar-wrap{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-    .balance-bar{flex:1;height:10px;background:rgba(255,255,255,.06);border-radius:5px;overflow:hidden}
-    .balance-fill{height:100%;border-radius:5px;transition:width .6s ease}
-    .fill-yang{background:linear-gradient(90deg,#e8a040,#f5c840)}
-    .fill-yin{background:linear-gradient(90deg,var(--teal-dim),var(--teal))}
-    .balance-label{font-size:var(--fs-small);color:var(--white-faint);width:30px}
-    .balance-msg{
-      font-family:'Noto Serif TC',serif;
-      color:var(--gold);
-      font-size:clamp(1.05rem,2.5vw,1.2rem);
-      letter-spacing:.07em;text-align:center;
-    }
-    .balance-service{font-size:var(--fs-small);color:var(--white-faint);margin-top:10px;text-align:center}
-    .balance-service a{color:var(--teal)}
-
-
-    /* ══════════════════════════════
        PRICING
     ══════════════════════════════ */
     #pricing{background:var(--bg-deepest)}
@@ -831,7 +784,6 @@
       .consult-wrap{grid-template-columns:1fr}
       .footer-top{grid-template-columns:1fr 1fr}
       .form-row{grid-template-columns:1fr}
-      .balance-grid{grid-template-columns:1fr}
     }
     @media(max-width:560px){
       .footer-top{grid-template-columns:1fr}
@@ -1286,62 +1238,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ BALANCE ═══ -->
-<section id="balance" class="section-pad" style="background:var(--bg-dark)">
-  <div class="container">
-    <div class="text-center">
-      <div class="ornament center">
-        <div class="ornament-line"></div>
-        <span class="ornament-sym">☯ 自我評量 ☯</span>
-        <div class="ornament-line"></div>
-      </div>
-      <h2 class="section-title">陰陽失衡自我診斷</h2>
-      <div class="glow-divider"></div>
-      <p class="section-sub">勾選近期符合的症狀，評估您目前的陰陽能量狀態，以便獲得最精準的調理建議。</p>
-    </div>
-    <div class="balance-grid">
-      <div class="balance-col yang">
-        <h4>☀️ 陽亢失調症狀</h4>
-        <div id="yangItems">
-          <div class="check-item" onclick="toggleCheck(this,'yang')"><div class="check-box"></div><span class="check-label">長期焦慮、難以放鬆</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yang')"><div class="check-box"></div><span class="check-label">失眠或睡眠品質極差</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yang')"><div class="check-box"></div><span class="check-label">容易發怒、情緒激動</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yang')"><div class="check-box"></div><span class="check-label">頭部燥熱、口乾舌燥</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yang')"><div class="check-box"></div><span class="check-label">思慮過多、停不下來</span></div>
-        </div>
-      </div>
-      <div class="balance-col yin">
-        <h4>🌙 陰盛傷陽症狀</h4>
-        <div id="yinItems">
-          <div class="check-item" onclick="toggleCheck(this,'yin')"><div class="check-box"></div><span class="check-label">手腳長期冰冷</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yin')"><div class="check-box"></div><span class="check-label">慢性疲勞、提不起勁</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yin')"><div class="check-box"></div><span class="check-label">情緒低落、意志消沉</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yin')"><div class="check-box"></div><span class="check-label">代謝緩慢、體重增加</span></div>
-          <div class="check-item" onclick="toggleCheck(this,'yin')"><div class="check-box"></div><span class="check-label">夜間多夢、容易驚醒</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="balance-result">
-      <div class="balance-bar-wrap">
-        <span class="balance-label" style="color:#e8a040">陽</span>
-        <div class="balance-bar"><div class="balance-fill fill-yang" id="yangBar" style="width:0%"></div></div>
-        <span style="font-size:var(--fs-small);color:var(--white-faint);min-width:36px" id="yangPct">0%</span>
-      </div>
-      <div class="balance-bar-wrap">
-        <span class="balance-label" style="color:var(--teal)">陰</span>
-        <div class="balance-bar"><div class="balance-fill fill-yin" id="yinBar" style="width:0%"></div></div>
-        <span style="font-size:var(--fs-small);color:var(--white-faint);min-width:36px" id="yinPct">0%</span>
-      </div>
-      <p class="balance-msg" id="balanceMsg">請勾選上方症狀以獲得評估結果</p>
-      <p class="balance-service" id="balanceService"></p>
-    </div>
-    <div class="disclaimer">
-      <p><strong>⚠️ 重要聲明：</strong>以上陰陽評量僅供心靈輔助參考，<strong>身體不適請務必優先尋求專業醫療協助</strong>。隨緣堂的玄學服務定位為能量輔助與心靈慰藉，無法取代任何醫療行為。</p>
-    </div>
-  </div>
-</section>
-
 
 <!-- ═══ PRICING ═══ -->
 <section id="pricing" class="section-pad">
@@ -1876,27 +1772,6 @@ function newOracle(){
   document.getElementById('oracleDate').textContent=
     `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日　星期${days[d.getDay()]}`;
 })();
-
-/* ── Balance ── */
-function toggleCheck(item){
-  item.querySelector('.check-box').classList.toggle('checked');
-  updateBalance();
-}
-function updateBalance(){
-  const yC=document.querySelectorAll('#yangItems .check-box.checked').length;
-  const nC=document.querySelectorAll('#yinItems .check-box.checked').length;
-  document.getElementById('yangBar').style.width=(yC/5*100)+'%';
-  document.getElementById('yinBar').style.width=(nC/5*100)+'%';
-  document.getElementById('yangPct').textContent=Math.round(yC/5*100)+'%';
-  document.getElementById('yinPct').textContent=Math.round(nC/5*100)+'%';
-  const msg=document.getElementById('balanceMsg'),svc=document.getElementById('balanceService');
-  if(yC===0&&nC===0){msg.textContent='請勾選上方症狀以獲得評估結果';svc.textContent='';return;}
-  if(yC>nC+1){msg.textContent='⚡ 陽氣偏亢，心火過旺——建議靜心養氣調理';svc.innerHTML='推薦：<a href="#articles">打坐養氣課程</a> ／ <a href="#consult">能量調理諮詢</a>';}
-  else if(nC>yC+1){msg.textContent='🌙 陰氣偏盛，元陽不足——建議祭改收驚調理';svc.innerHTML='推薦：<a href="#consult">收驚安神</a> ／ <a href="#consult">祭改化煞</a>';}
-  else if(yC>0&&nC>0){msg.textContent='☯ 陰陽俱有失調——建議全面能量診斷';svc.innerHTML='推薦：<a href="#consult">完整初診評估</a>';}
-  else if(yC>0){msg.textContent='微有陽亢跡象，建議適度調整作息';svc.innerHTML='推薦：<a href="#oracle">每日道家法語</a>';}
-  else{msg.textContent='輕微陰盛，注意保暖補陽';svc.innerHTML='推薦：<a href="#articles">氣脈養生專區</a>';}
-}
 
 /* ── Form ── */
 function submitForm(e){
